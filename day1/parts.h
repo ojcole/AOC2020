@@ -3,7 +3,7 @@
 
 #include <vector>
 
-long part1(std::vector<long>);
-long part2(std::vector<long>);
+long part1(std::vector<long>&);
+long part2(std::vector<long>&);
 
 #endif

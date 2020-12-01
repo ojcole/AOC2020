@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
 
@@ -11,6 +12,8 @@ int main() {
   while (std::cin >> inp) {
     items.push_back(inp);
   }
+
+  std::sort(items.begin(), items.end());
 
   std::cout << part1(items) << std::endl;
   std::cout << part2(items) << std::endl;

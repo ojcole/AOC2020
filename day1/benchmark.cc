@@ -1,5 +1,6 @@
 #include <benchmark/benchmark.h>
 
+#include <algorithm>
 #include <iostream>
 #include <vector>
 
@@ -14,6 +15,8 @@ static void BM_Part1(benchmark::State &state) {
     while (std::cin >> inp) {
       items.push_back(inp);
     }
+
+    std::sort(items.begin(), items.end());
   }
   callSetup = false;
 
@@ -31,6 +34,8 @@ static void BM_Part2(benchmark::State &state) {
     while (std::cin >> inp) {
       items.push_back(inp);
     }
+
+    std::sort(items.begin(), items.end());
   }
   callSetup = false;
 
@@ -39,7 +44,7 @@ static void BM_Part2(benchmark::State &state) {
   }
 }
 
-// BENCHMARK(BM_Part1)->Unit(benchmark::kMicrosecond);
-BENCHMARK(BM_Part2)->Unit(benchmark::kMicrosecond);
+BENCHMARK(BM_Part1)->Unit(benchmark::kMicrosecond);
+// BENCHMARK(BM_Part2)->Unit(benchmark::kMicrosecond);
 
 BENCHMARK_MAIN();

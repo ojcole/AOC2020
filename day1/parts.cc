@@ -7,9 +7,7 @@
 
 using namespace std;
 
-long part1(std::vector<long> items) {
-  sort(items.begin(), items.end());
-
+long part1(std::vector<long> &items) {
   auto begin = items.begin();
   auto end = std::lower_bound(items.begin(), items.end(), 2020 - begin[0]);
 
@@ -28,9 +26,7 @@ long part1(std::vector<long> items) {
   return -1;
 }
 
-long part2(std::vector<long> items) {
-  sort(items.begin(), items.end());
-
+long part2(std::vector<long> &items) {
   for (auto it = items.begin(); it != items.end(); it++) {
     auto begin = it + 1;
     auto end = std::lower_bound(begin, items.end(), 2020 - (*it + it[1]));
