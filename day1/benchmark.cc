@@ -6,13 +6,16 @@
 #include "parts.h"
 
 static void BM_Part1(benchmark::State &state) {
-  std::vector<long> items;
+  static std::vector<long> items;
+  static bool callSetup = true;
+  if (callSetup) {
+    long inp;
 
-  long inp;
-
-  while (std::cin >> inp) {
-    items.push_back(inp);
+    while (std::cin >> inp) {
+      items.push_back(inp);
+    }
   }
+  callSetup = false;
 
   for (auto _ : state) {
     part1(items);
@@ -20,20 +23,23 @@ static void BM_Part1(benchmark::State &state) {
 }
 
 static void BM_Part2(benchmark::State &state) {
-  std::vector<long> items;
+  static std::vector<long> items;
+  static bool callSetup = true;
+  if (callSetup) {
+    long inp;
 
-  long inp;
-
-  while (std::cin >> inp) {
-    items.push_back(inp);
+    while (std::cin >> inp) {
+      items.push_back(inp);
+    }
   }
+  callSetup = false;
 
   for (auto _ : state) {
     part2(items);
   }
 }
 
-BENCHMARK(BM_Part1)->Iterations(10000000);
-// BENCHMARK(BM_Part2)->Iterations(10000000);
+// BENCHMARK(BM_Part1)->Unit(benchmark::kMicrosecond);
+BENCHMARK(BM_Part2)->Unit(benchmark::kMicrosecond);
 
 BENCHMARK_MAIN();

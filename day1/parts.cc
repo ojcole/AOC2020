@@ -11,7 +11,7 @@ long part1(std::vector<long> items) {
   sort(items.begin(), items.end());
 
   auto begin = items.begin();
-  auto end = std::lower_bound(begin, items.end(), 2020 - *begin);
+  auto end = std::lower_bound(items.begin(), items.end(), 2020 - begin[0]);
 
   while (begin != end) {
     auto res = *begin + *end;
