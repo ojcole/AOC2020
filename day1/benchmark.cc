@@ -44,7 +44,7 @@ static void BM_Part2(benchmark::State &state) {
   }
 }
 
-BENCHMARK(BM_Part1)->Unit(benchmark::kMicrosecond);
-// BENCHMARK(BM_Part2)->Unit(benchmark::kMicrosecond);
+// BENCHMARK(BM_Part1)->Unit(benchmark::kMicrosecond);
+BENCHMARK(BM_Part2)->Unit(benchmark::kMicrosecond);
 
 BENCHMARK_MAIN();
