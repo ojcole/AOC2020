@@ -84,5 +84,6 @@ int main() {
     transformer[desc + " " + color] = items;
   }
 
+  Part1(transformer);
   cout << Part2(transformer, "shiny gold") << endl;
 }
