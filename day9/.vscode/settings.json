@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "set": "cpp",
+        "__hash_table": "cpp",
+        "__tree": "cpp",
+        "functional": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "algorithm": "cpp"
+    }
+}
