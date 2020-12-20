@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "vector": "cpp",
+        "utility": "cpp",
+        "unordered_set": "cpp",
+        "bitset": "cpp"
+    }
+}
